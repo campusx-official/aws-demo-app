@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie</title>
+</head>
+<style type="text/css">
+	body{
+		background-color: purple;
+	}
+
+	h1{
+		text-align: center;
+		color: white;
+	}
+
+	.container{
+		max-height: 1200px;
+		margin: auto;
+	}
+
+	.card{
+		width: 22%;
+		background-color: white;
+		float: left;
+		padding: 10px;
+		font-family: 'verdana';
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
+
+
+</style>
+<body>
+	<h1>List of Movies</h1>
+
+	<div class="container">
+
+		{% if data %}
+
+			{% for i in data %}
+
+				<div class="card">
+					<img src="{{ i[4] }}" style="width: 100%;height: 250px">
+
+					<h4>{{ i[1] }}</h4>
+					<p><span>{{ i[2] }}</span><span style="float: right">{{ i[3] }}</span></p>
+				</div>
+
+			{% endfor %}
+
+
+		{% endif %}
+
+
+		
+	</div>
+</body>
+</html>
